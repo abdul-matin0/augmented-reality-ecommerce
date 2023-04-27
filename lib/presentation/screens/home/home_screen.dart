@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:halcera/presentation/screens/home/widgets/category_carousel_widget.dart';
+import 'package:halcera/presentation/screens/home/widgets/banner_carousel_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/home_header_widget.dart';
 import 'package:halcera/presentation/styles/colors.dart';
 import 'package:halcera/presentation/widgets/application_app_bar_widget.dart';
@@ -20,11 +18,12 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
-              children: const [
-                HomeHeaderWidget(),
-                 /// Carousel Slider
-              CategoryCarouselWidget()
-                ],
+              children: [
+                const HomeHeaderWidget(),
+
+                /// Carousel Slider
+                BannerCarouselWidget()
+              ],
             ),
           ),
         ),

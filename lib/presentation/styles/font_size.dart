@@ -6,3 +6,5 @@ const textSizeL = 14.0;
 const textSizeM = 12.0;
 const textSizeS = 10.0;
 const textSizeXS = 8.0;
+const imageBorderRadius = 14.0;
+const buttonBorderRadius = 30.0;
