@@ -24,6 +24,10 @@ dependencies:
   random_avatar: ^0.0.8
   # svg
   flutter_svg: ^2.0.5
+  # images
+  cached_network_image: ^3.2.3
+  # carousel slider
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
