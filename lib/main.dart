@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:halcera/presentation/screens/home/home_screen.dart';
 import 'package:halcera/presentation/screens/splash_screen.dart';
 
 void main() {
@@ -15,10 +16,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Halcera',
       debugShowCheckedModeBanner: false,
-      
-      theme: ThemeData(
-      ),
-      home: const SplashScreen(),
+      theme: ThemeData(),
+      home: const HomeScreen(),
     );
   }
 }
