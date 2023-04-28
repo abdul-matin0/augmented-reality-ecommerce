@@ -16,7 +16,6 @@ class ProductCardWidget extends StatelessWidget {
       children: [
         SizedBox(
           height: height,
-          width: double.infinity,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(imageBorderRadius),
             child: Image.asset('assets/images/${product.imageURL}',

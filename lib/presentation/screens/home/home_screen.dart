@@ -48,28 +48,13 @@ class HomeScreen extends StatelessWidget {
                       ),
                       GetBuilder<ProductController>(
                           builder: (productController) {
-                        int indexCounter = 0;
-                        double? height;
                         return StaggeredGrid.count(
                           crossAxisCount: 2,
                           mainAxisSpacing: 18,
                           crossAxisSpacing: 10,
                           children:
                               productController.listOfProducts.map((product) {
-                            indexCounter++;
-                            height = indexCounter == 1
-                                ? 160
-                                : indexCounter == 2
-                                    ? 200
-                                    : indexCounter == 3
-                                        ? 210
-                                        : indexCounter == 4
-                                            ? 170
-                                            : null;
-                            return ProductCardWidget(
-                              product: product,
-                              height: height,
-                            );
+                            return ProductCardWidget(product: product);
                           }).toList(),
                         );
                       })
