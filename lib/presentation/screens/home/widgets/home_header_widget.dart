@@ -44,7 +44,6 @@ class HomeHeaderWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text(
                       'Find your favourite \ndish.',
-                      overflow: TextOverflow.fade,
                       style: urbanistFontStyle(
                           fontWeight: FontWeight.w600, fontSize: h1),
                     ),

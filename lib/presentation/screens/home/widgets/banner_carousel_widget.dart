@@ -103,8 +103,8 @@ class BannerCarouselWidget extends StatelessWidget {
                     return GestureDetector(
                       onTap: () => _carouselController.animateToPage(entry.key),
                       child: Container(
-                        width: isCurrentIndex ? 44 : 9.0,
-                        height: 9.0,
+                        width: isCurrentIndex ? 44 : 8.0,
+                        height: 8.0,
                         margin: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 7.0),
                         decoration: BoxDecoration(
                             shape: isCurrentIndex
@@ -114,7 +114,7 @@ class BannerCarouselWidget extends StatelessWidget {
                                 ? secondaryColor
                                 : secondaryFontColor,
                             borderRadius: isCurrentIndex
-                                ? BorderRadius.circular(9)
+                                ? BorderRadius.circular(8)
                                 : null),
                       ),
                     );

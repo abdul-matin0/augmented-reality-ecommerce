@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:halcera/presentation/screens/home/widgets/banner_carousel_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/home_header_widget.dart';
 import 'package:halcera/presentation/styles/colors.dart';
+import 'package:halcera/presentation/styles/font_size.dart';
+import 'package:halcera/presentation/styles/fonts.dart';
 import 'package:halcera/presentation/widgets/application_app_bar_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,11 +21,27 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HomeHeaderWidget(),
 
                 /// Carousel Slider
-                BannerCarouselWidget()
+                BannerCarouselWidget(),
+
+                /// Recommendation
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: Get.width * .05, vertical: Get.height * .02),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Recommended for you',
+                        style: urbanistFontStyle(
+                            fontSize: h2, fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

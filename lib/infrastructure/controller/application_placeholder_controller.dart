@@ -15,6 +15,13 @@ class ApplicationPlaceholderController extends GetxController {
         title: 'Special discount!',
         subtitle: 'Up to 70% off',
         titleColor: primaryWhiteColor,
+        subtitleColor: primaryFontColor),
+        BannerPlaceholder(
+        imageURL: 'placeholderthree.png',
+        title: 'Rewards & offers',
+        subtitle: 'Win rewards',
+        buttonText: 'Get Started',
+        titleColor: primaryWhiteColor,
         subtitleColor: primaryFontColor)
   ];
 }
