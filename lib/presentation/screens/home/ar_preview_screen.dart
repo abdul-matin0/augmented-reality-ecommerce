@@ -1,6 +1,7 @@
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:halcera/presentation/widgets/application_app_bar_widget.dart';
 
@@ -26,7 +27,11 @@ class _ARPreviewScreenState extends State<ARPreviewScreen> {
   }
 
   Future _addItem(ArCoreHitTestResult hit) async {
-    final objectNode = ArCoreReferenceNode(name: "toucan.sfb", object3DFileName: 'toucan.sfb', position: hit.pose.translation, rotation: hit.pose.rotation);
+    final objectNode = ArCoreReferenceNode(
+        name: "toucan.sfb",
+        object3DFileName: 'toucan.sfb',
+        position: hit.pose.translation,
+        rotation: hit.pose.rotation);
 
     // final bytes = (await rootBundle.load("assets/images/ironman.png"))
     //     .buffer
@@ -49,10 +54,18 @@ class _ARPreviewScreenState extends State<ARPreviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const DetailsAppBarWidget(title: 'AR'),
-      body: ArCoreView(
-        onArCoreViewCreated: _onArCoreViewCreated,
-        enableTapRecognizer: true,
+      body: ModelViewer(
+        src: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
+        alt: "A 3D model of an astronaut",
+        ar: true,
+        autoRotate: true,
+        
+        cameraControls: true,
       ),
+      // body: ArCoreView(
+      //   onArCoreViewCreated: _onArCoreViewCreated,
+      //   enableTapRecognizer: true,
+      // ),
     );
   }
 }
