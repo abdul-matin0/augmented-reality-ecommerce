@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:halcera/infrastructure/models/product.dart';
+import 'package:halcera/presentation/screens/home/product_details_screen.dart';
 import 'package:halcera/presentation/styles/font_size.dart';
 import 'package:halcera/presentation/styles/fonts.dart';
 
@@ -14,12 +15,17 @@ class ProductCardWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          height: height,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(imageBorderRadius),
-            child: Image.asset('assets/images/${product.imageURL}',
-                fit: BoxFit.cover),
+        GestureDetector(
+          onTap: () => Get.to(() => ProductDetailsScreen(product: product),
+              transition: Transition.fadeIn,
+              duration: const Duration(milliseconds: 300)),
+          child: SizedBox(
+            height: height,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(imageBorderRadius),
+              child: Image.asset('assets/images/${product.imageURL}',
+                  fit: BoxFit.cover),
+            ),
           ),
         ),
         Padding(

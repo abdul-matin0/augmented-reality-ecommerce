@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:halcera/infrastructure/controller/product_controller.dart';
 import 'package:halcera/presentation/screens/home/widgets/banner_carousel_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/home_header_widget.dart';
+import 'package:halcera/presentation/screens/home/widgets/product_recommendations_widget.dart';
 import 'package:halcera/presentation/styles/colors.dart';
 import 'package:halcera/presentation/styles/font_size.dart';
 import 'package:halcera/presentation/styles/fonts.dart';
 import 'package:halcera/presentation/widgets/application_app_bar_widget.dart';
-import 'package:halcera/presentation/widgets/product_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -46,18 +44,7 @@ class HomeScreen extends StatelessWidget {
                               fontSize: h2, fontWeight: FontWeight.w600),
                         ),
                       ),
-                      GetBuilder<ProductController>(
-                          builder: (productController) {
-                        return StaggeredGrid.count(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 18,
-                          crossAxisSpacing: 10,
-                          children:
-                              productController.listOfProducts.map((product) {
-                            return ProductCardWidget(product: product);
-                          }).toList(),
-                        );
-                      })
+                      const ProductRecommendationsWidget()
                     ],
                   ),
                 )
