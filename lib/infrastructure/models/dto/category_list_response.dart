@@ -25,3 +25,11 @@ class CategoryListResponse {
     return data;
   }
 }
+
+// class APIResponse<T> {
+//   bool? status;
+//   List<T>? dataList;
+//   T? data;
+
+//   APIResponse({this.status, this.dataList, this.data});
+// }

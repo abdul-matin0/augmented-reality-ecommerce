@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+import 'package:halcera/infrastructure/controller/product_controller.dart';
 import 'package:halcera/presentation/screens/home/widgets/banner_carousel_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/home_header_widget.dart';
 import 'package:halcera/presentation/styles/colors.dart';
 import 'package:halcera/presentation/styles/font_size.dart';
 import 'package:halcera/presentation/styles/fonts.dart';
 import 'package:halcera/presentation/widgets/application_app_bar_widget.dart';
+import 'package:halcera/presentation/widgets/product_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,12 +36,43 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: Get.width * .05, vertical: Get.height * .02),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Recommended for you',
-                        style: urbanistFontStyle(
-                            fontSize: h2, fontWeight: FontWeight.w600),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: Get.height * .012),
+                        child: Text(
+                          'Recommended for you',
+                          style: urbanistFontStyle(
+                              fontSize: h2, fontWeight: FontWeight.w600),
+                        ),
                       ),
+                      GetBuilder<ProductController>(
+                          builder: (productController) {
+                        int indexCounter = 0;
+                        double? height;
+                        return StaggeredGrid.count(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 18,
+                          crossAxisSpacing: 10,
+                          children:
+                              productController.listOfProducts.map((product) {
+                            indexCounter++;
+                            height = indexCounter == 1
+                                ? 160
+                                : indexCounter == 2
+                                    ? 200
+                                    : indexCounter == 3
+                                        ? 210
+                                        : indexCounter == 4
+                                            ? 170
+                                            : null;
+                            return ProductCardWidget(
+                              product: product,
+                              height: height,
+                            );
+                          }).toList(),
+                        );
+                      })
                     ],
                   ),
                 )
