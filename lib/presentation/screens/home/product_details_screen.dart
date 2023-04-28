@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:halcera/infrastructure/models/product.dart';
+import 'package:halcera/presentation/screens/home/ar_preview_screen.dart';
 import 'package:halcera/presentation/styles/colors.dart';
 import 'package:halcera/presentation/styles/font_size.dart';
 import 'package:halcera/presentation/styles/fonts.dart';
@@ -43,29 +44,32 @@ class ProductDetailsScreen extends StatelessWidget {
                           Positioned(
                             right: 14,
                             top: 4,
-                            child: PrimaryButtonWidget(
-                              buttonColor: const Color(0xFFE9ECF0),
-                              width: Get.width * .25,
-                              height: Get.height * .05,
-                              titleWidget: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                        'assets/images/ar-box.svg'),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 8.0, right: 8.0),
-                                      child: Text(
-                                        '360',
-                                        style: urbanistFontStyle(
-                                          fontSize: h4,
-                                          fontWeight: FontWeight.w600,
+                            child: GestureDetector(
+                              onTap: () => Get.to(() => ARPreviewScreen()),
+                              child: PrimaryButtonWidget(
+                                buttonColor: const Color(0xFFE9ECF0),
+                                width: Get.width * .25,
+                                height: Get.height * .05,
+                                titleWidget: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15.0),
+                                  child: Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                          'assets/images/ar-box.svg'),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 8.0, right: 8.0),
+                                        child: Text(
+                                          '360',
+                                          style: urbanistFontStyle(
+                                            fontSize: h4,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
