@@ -45,7 +45,11 @@ class ProductDetailsScreen extends StatelessWidget {
                             right: 14,
                             top: 4,
                             child: GestureDetector(
-                              onTap: () => Get.to(() => ARPreviewScreen()),
+                              onTap: () => product.glbModelURL != null
+                                  ? Get.to(() => ARPreviewScreen(
+                                      modelSrc: product.glbModelURL!,
+                                      altText: product.title))
+                                  : null,
                               child: PrimaryButtonWidget(
                                 buttonColor: const Color(0xFFE9ECF0),
                                 width: Get.width * .25,
