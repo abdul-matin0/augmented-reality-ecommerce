@@ -18,6 +18,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   # getx
   get: ^4.6.5
+  # http
+  http: ^0.13.5
   # style
   google_fonts: ^4.0.3
   lottie: ^2.3.2

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:halcera/presentation/screens/home/widgets/banner_carousel_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/home_header_widget.dart';
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     return Scaffold(
       backgroundColor: primaryWhiteColor,
       appBar: const ApplicationAppBarWidget(),

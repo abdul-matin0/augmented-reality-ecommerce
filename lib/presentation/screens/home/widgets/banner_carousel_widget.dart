@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:halcera/infrastructure/controller/application_placeholder_controller.dart';
-import 'package:halcera/infrastructure/controller/category_controller.dart';
 import 'package:halcera/presentation/styles/colors.dart';
 import 'package:halcera/presentation/styles/font_size.dart';
 import 'package:halcera/presentation/styles/fonts.dart';
