@@ -48,7 +48,8 @@ class ProductDetailsScreen extends StatelessWidget {
                             child: GestureDetector(
                               onTap: () => product.glbModelURL != null
                                   ? Get.to(() => ARPreviewScreen(
-                                      modelSrc: product.glbModelURL!,
+                                      modelSrc:
+                                          'assets/models/${product.glbModelURL!}',
                                       altText: product.title))
                                   : null,
                               child: PrimaryButtonWidget(
@@ -103,105 +104,5 @@ class ProductDetailsScreen extends StatelessWidget {
                     ],
                   ),
                 ))));
-  }
-}
-
-
-
-class FloatingActionWidget extends StatelessWidget {
-  const FloatingActionWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GetX<TransactionController>(
-      builder: (controller) => Visibility(
-        visible: controller.onCall.value,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: Get.height / 10),
-              child: CollapsibleSidebar(
-                height: Get.height / 2.3,
-                items: TransactionController.items,
-                toggleButtonIcon: Icons.arrow_back_ios_new,
-                iconSize: 30,
-                toggleTitleStyle: montserrat(textStyle: titleMedium(context)),
-                textStyle: montserrat(textStyle: titleMedium(context)),
-                backgroundColor: white,
-                selectedIconColor: black,
-                selectedIconBox: white,
-                unselectedIconColor: Colors.grey.withOpacity(0.3),
-                selectedTextColor: black,
-                sidebarBoxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.2),
-                      spreadRadius: 1,
-                      blurRadius: 15,
-                      offset: const Offset(0, 3)),
-                ],
-                borderRadius: 12,
-                avatarImg: null,
-                showTitle: false,
-                body: const SizedBox(),
-              ),
-            ),
-            Container(
-              width: Get.width / 2,
-              height: Get.height / 2.5,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.0),
-                color: white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 1,
-                    blurRadius: 15,
-                    offset: const Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Stack(children: [
-                AgoraVideoViewer(
-                  client: controller.client,
-                  layoutType: Layout.floating,
-                  showNumberOfUsers: true,
-                ),
-                AgoraVideoButtons(
-                  client: controller.client,
-                  verticalButtonPadding: 10,
-                  autoHideButtonTime: 10,
-                  autoHideButtons: true,
-                  disconnectButtonChild: InkWell(
-                    onTap: () {
-                      controller.onCall.value = false;
-                      Get.to(() => const HomeScreen());
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: dangerColor),
-                      child: const Icon(
-                        Icons.call_end_rounded,
-                        color: white,
-                      ),
-                    ),
-                  ),
-                  enabledButtons: const [
-                    BuiltInButtons.toggleCamera,
-                    BuiltInButtons.callEnd,
-                    BuiltInButtons.toggleMic
-                  ],
-                )
-              ]),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }

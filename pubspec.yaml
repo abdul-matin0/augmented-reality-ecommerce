@@ -35,6 +35,8 @@ dependencies:
   # ar
   arcore_flutter_plugin: ^0.1.0
   model_viewer_plus: ^1.5.0
+  # agora
+  agora_uikit: ^1.3.3
 
 dev_dependencies:
   flutter_test:

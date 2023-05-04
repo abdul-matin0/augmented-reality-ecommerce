@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:halcera/infrastructure/controller/product_controller.dart';
 import 'package:halcera/presentation/styles/colors.dart';
 import 'package:halcera/presentation/styles/font_size.dart';
 import 'package:halcera/presentation/styles/fonts.dart';
@@ -52,11 +53,19 @@ class HomeHeaderWidget extends StatelessWidget {
               ),
 
               /// Search
-              CircleAvatar(
-                backgroundColor: secondaryFontColor,
+              GestureDetector(
+                onTap: () {
+                  ProductController productController =
+                      Get.find<ProductController>();
+                  productController.onCall.value = true;
+                  productController.initAgora();
+                },
                 child: CircleAvatar(
-                  backgroundColor: primaryWhiteColor,
-                  child: SvgPicture.asset('assets/images/search.svg'),
+                  backgroundColor: secondaryFontColor,
+                  child: CircleAvatar(
+                    backgroundColor: primaryWhiteColor,
+                    child: SvgPicture.asset('assets/images/call.svg'),
+                  ),
                 ),
               )
             ],

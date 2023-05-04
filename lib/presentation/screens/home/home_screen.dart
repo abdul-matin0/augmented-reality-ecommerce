@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:halcera/infrastructure/controller/product_controller.dart';
 import 'package:halcera/presentation/screens/home/widgets/banner_carousel_widget.dart';
+import 'package:halcera/presentation/screens/home/widgets/floating_action_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/home_header_widget.dart';
 import 'package:halcera/presentation/screens/home/widgets/product_recommendations_widget.dart';
 import 'package:halcera/presentation/styles/colors.dart';
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryWhiteColor,
       appBar: const ApplicationAppBarWidget(),
+      floatingActionButton: const FloatingActionWidget(),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(top: 20),

@@ -1,3 +1,4 @@
+import 'package:agora_uikit/agora_uikit.dart';
 import 'package:get/get.dart';
 import 'package:halcera/infrastructure/helper/fetch_operation.dart';
 import 'package:halcera/infrastructure/models/dto/product_list_response.dart';
@@ -11,18 +12,13 @@ class ProductController extends GetxController {
 
   List<Product> listOfProducts = [];
 
-  // List<Product> listOfProducts = [
-  //   Product(
-  //       imageURL: 'productone.png',
-  //       title: 'Fried Eggs',
-  //       description:
-  //           'Fried eggs, rice and coleslaw with choice of protein, side and a drink.',
-  //       price: 5.00),
-  //   Product(imageURL: 'producttwo.png', title: 'Green Pasta', price: 17.99),
-  //   Product(imageURL: 'productthree.png', title: 'Apple Pie', price: 9.99),
-  //   Product(
-  //       imageURL: 'productfour.png', title: 'Potato with Salad', price: 12.35),
-  // ];
+  final AgoraClient client = AgoraClient(
+      agoraConnectionData: AgoraConnectionData(
+          appId: 'e5aba4e7d7cc4052aade4d5d15fa2dd6',
+          channelName: 'halvera',
+          tempToken:
+              '007eJxTYFj04DvDRx2lWN5fl5439e9sb5904XvD99QNycvmfllf7NOlwJBqmpiUaJJqnmKenGxiYGqUmJiSapJimmJompZolJJiFjs7OKUhkJEhvS2HlZEBAkF8doaMxJyy1KJEBgYABeok1w=='));
+  var onCall = false.obs;
 
   @override
   void onInit() {
@@ -48,5 +44,14 @@ class ProductController extends GetxController {
       productListFetchOperation.isLoading = false;
       update();
     }
+  }
+
+  Future initAgora() async {
+    try {
+      client.engine.leaveChannel();
+      // ignore: empty_catches
+    } catch (e) {}
+    await client.initialize();
+    onCall.value = true;
   }
 }
