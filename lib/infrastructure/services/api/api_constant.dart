@@ -1,5 +1,5 @@
 class ApiConstants {
-  static String baseEndpoint = 'https://10.0.2.2:7063/api';
+  static String baseEndpoint = 'http://rodiaa250-001-site1.atempurl.com/api';
   static String accessToken = "";
   static int requestTimeOutDuration = 10;
 

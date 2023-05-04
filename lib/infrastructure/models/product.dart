@@ -19,9 +19,9 @@ class Product {
       this.description,
       this.price,
       this.imageURL,
-      this.videoURL,
       this.categoryId,
-      this.category, this.glbModelURL, this.imageDescriptionURL});
+      this.category,
+      this.glbModelURL});
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -29,9 +29,7 @@ class Product {
     description = json['description'];
     price = json['price'];
     imageURL = json['imageURL'];
-    videoURL = json['videoURL'];
-     glbModelURL = json['glbModelURL'];
-      imageDescriptionURL = json['imageDescriptionURL'];
+    glbModelURL = json['glbModelURL'];
     categoryId = json['categoryId'];
     category =
         json['category'] != null ? Category.fromJson(json['category']) : null;
@@ -44,7 +42,6 @@ class Product {
     data['description'] = description;
     data['price'] = price;
     data['imageURL'] = imageURL;
-    data['videoURL'] = videoURL;
     data['categoryId'] = categoryId;
     if (category != null) {
       data['category'] = category!.toJson();

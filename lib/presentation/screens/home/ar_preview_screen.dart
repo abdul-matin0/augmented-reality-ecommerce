@@ -21,6 +21,7 @@ class ARPreviewScreen extends StatelessWidget {
         ar: true,
         autoRotate: true,
         cameraControls: true,
+        scale: '0.5 0.5 1.0',
       ),
     );
   }
