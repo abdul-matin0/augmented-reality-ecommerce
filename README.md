@@ -1,16 +1,29 @@
 # halcera
 
-A new Flutter project.
+Enhancing customer experience and customer service quality in e-commerce
 
-## Getting Started
+This project aims at Enhancing customer’s experience and customer service quality in order for business to get and retain customers ultimately improving sales in for an e-commerce business.
 
-This project is a starting point for a Flutter application.
+Features:
+- Improved customer experience with Augmented Reality
+- Improved customer service with Video conferencing
+- Loosely coupled/independent application infrastructure and Scalability
+- Gamification
 
-A few resources to get you started if this is your first Flutter project:
+Implementation
+- Part of the components that are used in this project are:
+  - API
+  - Web
+  - Mobile Application
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Technology Description
+  - Blazor
+  - .NET Web API
+  - Swagger and Postman
+  - Google Flutter
+  - Microsoft SQL Server
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Application Design Patterns and Architecture
+  - MVC and Services
+  - Repository Pattern
+  - GetX state management
